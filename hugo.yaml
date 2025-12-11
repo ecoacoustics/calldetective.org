@@ -39,26 +39,12 @@ params:
     on_surface_variant: "#1a1a1a"
 
     outline: "#6f7978"
-  apiHost: https://api.ecosounds.org
-  workbenchHost: https://ecosounds.org
-  style:
-    roundedButtons: true
-    # Theme colors are defined using "hsl" (hue, saturation, lightness).
-    # To create your own hsl theme color, you can use the following website.
-    # https://hslpicker.com/#ca7d2f
-    themeColor:
-      hue: 30deg
-      saturation: 62%
-      lightness: 49%
-    themeShades:
-      "50": 252 249 245
-      "100": 247 234 222
-      "200": 240 219 196
-      "300": 233 201 168
-      "400": 224 177 130
-      "500": 211 146 80
-      "600": 186 115 44
-      "700": 153 95 36
-      "800": 126 78 30
-      "900": 90 56 21
-      "950": 55 34 13
+  showcase:
+    - title: "Explore Acoustic Data"
+      description: "Discover how Call Detective can help you analyze and visualize large-scale acoustic datasets with ease."
+      image: "images/showcase1.png"
+      link: "/explore"
+    - title: "Explore Acoustic Data"
+      description: "Discover how Call Detective can help you analyze and visualize large-scale acoustic datasets with ease."
+      image: "images/showcase1.png"
+      link: "/explore"
