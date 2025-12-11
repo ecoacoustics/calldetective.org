@@ -126,13 +126,18 @@ md-filled-tonal-button {
 .double-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 12rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 
   margin-inline: auto;
   margin-bottom: 1rem;
+
+  p {
+    text-align: justify;
+    letter-spacing: 0.5px;
+  }
 }
 
 .page-section {
