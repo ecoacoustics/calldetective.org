@@ -1,0 +1,22 @@
+baseURL: "https://calldetective.org/"
+languageCode: "en-us"
+title: "Call Detective"
+module:
+  hugoVersion:
+    extended: false
+    min: 0.116.0
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  colors:
+    primary: "hsl(30deg, 62%, 49%)"
+    on_primary: "#ffffff"
+    primary_container: "#1d1d1d"
+    surface: "#fafdfc"
+    surface_variant: "#dae5e4"
+    on_surface: "#ffffff"
+    on_surface_variant: "#000000"
+    outline: "#6f7978"
