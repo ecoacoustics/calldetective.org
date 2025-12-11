@@ -109,6 +109,11 @@ a {
   }
 }
 
+md-filled-tonal-button {
+  --_container-color: var(--md-sys-color-primary) !important;
+  --_label-text-color: var(--md-sys-color-on-primary) !important;
+}
+
 .dark-section {
   color: var(--md-sys-color-on-surface);
   background-color: var(--md-sys-color-surface);
