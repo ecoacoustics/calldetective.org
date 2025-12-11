@@ -61,3 +61,56 @@
 
   {{- .Inner -}}
 </div>
+
+<style>
+  .hero-blurb {
+    text-align: center;
+    font-size: 2rem;
+
+    .hero-blurb-title {
+      margin-bottom: 1.5rem;
+    }
+
+    color: var(--md-sys-color-on-surface);
+    background-color: var(--md-sys-color-surface);
+
+    .blurb-double-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+
+      max-width: 50ch;
+
+      margin-inline: auto;
+      margin-bottom: 1rem;
+    }
+
+    .hero-feature-list {
+      display: flex;
+      gap: 2rem;
+      margin-block: 3rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      margin-block: 3rem;
+      gap: 6rem;
+
+      .hero-stat {
+        letter-spacing: -0.025em;
+      }
+
+      .stat-number {
+        color: var(--md-sys-color-primary);
+      }
+
+      .stat-label {
+        font-size: 1.2rem;
+      }
+    }
+  }
+</style>
