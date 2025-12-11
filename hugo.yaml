@@ -35,6 +35,7 @@ params:
     surface: "#1d1d1d"
     on_surface: "#ffffff"
 
+    surface_container_high: "#1a1a1a"
     surface_container: "#2a2a2a"
     surface_container_low: "#3a3a3a"
 

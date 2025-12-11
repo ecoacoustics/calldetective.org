@@ -17,6 +17,7 @@
   --md-sys-color-surface-variant: {{ .Site.Params.colors.surface_variant }};
   --md-sys-color-on-surface-variant: {{ .Site.Params.colors.on_surface_variant }};
 
+  --md-sys-color-surface-container-high: {{ .Site.Params.colors.surface_container_high }};
   --md-sys-color-surface-container: {{ .Site.Params.colors.surface_container }};
   --md-sys-color-surface-container-low: {{ .Site.Params.colors.surface_container_low }};
 
@@ -87,11 +88,31 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
+
+  /* background-color: hsl(45, 46%, 95%); */
+  background-color: hsl(45, 29%, 97%);
 }
 
 h2 {
   font-family: "Roboto", sans-serif;
   font-size: 2rem !important;
+}
+
+.dark-section {
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface);
+}
+
+.double-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  margin-inline: auto;
+  margin-bottom: 1rem;
 }
 
 .page-section {

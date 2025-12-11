@@ -1,49 +1,41 @@
-<div>
+<div class="hero-blurb">
   <h2 class="hero-blurb-title md-typescale-headline-medium">
-    Empowering acoustic research at scale
+    Empowering citizen science at scale
   </h2>
-
-  <div class="blurb-double-column">
-    <p class="md-typescale-body-medium">
-      Empowering ecologists and researchers to create stunning portfolios of
-      animal vocalizations. Our platform makes it easy to listen, analyze, and
-      share the acoustic signatures of wildlife. From field recordings to
-      curated libraries and peer collaboration, Call Detective helps teams turn
-      noisy datasets into publication-grade insights.
-    </p>
-
-    <p class="md-typescale-body-medium">
-      Built for both solo researchers and large teams, the platform supports
-      automated tagging, batch processing, and reproducible analysis pipelines.
-      Use integrated visualization tools to explore spectrograms, annotate
-      calls, and export curated datasets for publications or public
-      repositories.
-    </p>
-  </div>
 
   <ul class="hero-feature-list">
     <li class="md-typescale-body-medium">
-      <md-icon>mic</md-icon>
-      <strong>High-fidelity recording</strong> — Record and upload lossless
-      files and maintain original metadata.
+      <span class="feature-heading">
+        <md-icon> mic</md-icon>
+        <strong>High-fidelity recording</strong>
+      </span>
+      <p>Record and upload lossless files and maintain original metadata.</p>
     </li>
 
     <li class="md-typescale-body-medium">
-      <md-icon>analytics</md-icon>
-      <strong>AI-assisted identification</strong> — Quickly detect and classify
-      species calls with confidence scores.
+      <span class="feature-heading">
+        <md-icon>analytics</md-icon>
+        <strong>AI-assisted identification</strong>
+      </span>
+      <p>Quickly detect and classify species calls with confidence scores.</p>
     </li>
 
     <li class="md-typescale-body-medium">
-      <md-icon>folder_shared</md-icon>
-      <strong>Collaborative workflows</strong> — Share projects, annotate
-      together, and manage contributor roles.
+      <span class="feature-heading">
+        <md-icon>folder_shared</md-icon>
+        <strong>Collaborative workflows</strong>
+      </span>
+      <p>Share projects, annotate together, and manage contributor roles.</p>
     </li>
 
     <li class="md-typescale-body-medium">
-      <md-icon>public</md-icon>
-      <strong>Open science tools</strong> — Export reproducible analysis and
-      publish datasets alongside research.
+      <span class="feature-heading">
+        <md-icon>public</md-icon>
+        <strong>Open science tools</strong>
+      </span>
+      <p>
+        Export reproducible analysis and publish datasets alongside research.
+      </p>
     </li>
   </ul>
 
@@ -78,37 +70,55 @@
     font-size: 2rem;
 
     .hero-blurb-title {
-      margin-bottom: 1.5rem;
-    }
-
-    color: var(--md-sys-color-on-surface);
-    background-color: var(--md-sys-color-surface);
-
-    .blurb-double-column {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-
-      max-width: 50ch;
-
-      margin-inline: auto;
+      margin-top: 0m;
       margin-bottom: 1rem;
     }
 
     .hero-feature-list {
       display: flex;
       gap: 2rem;
-      margin-block: 3rem;
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      li {
+        padding-inline: 2rem;
+        padding-block: 1rem;
+
+        max-width: 275px;
+
+        border: 1px solid var(--md-sys-color-on-surface-variant);
+        background-color: var(--md-sys-color-surface-container);
+        border-radius: 12px;
+
+        .feature-heading {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          text-align: center;
+
+          margin-bottom: 0.5rem;
+
+          md-icon {
+            margin-right: 0.5rem;
+          }
+        }
+
+        p {
+          margin: 0;
+        }
+      }
     }
 
     .hero-stats {
       display: flex;
       justify-content: center;
       margin-block: 3rem;
+      margin-bottom: 2rem;
       gap: 6rem;
+
+      flex-wrap: wrap;
 
       .hero-stat {
         letter-spacing: -0.025em;
@@ -120,6 +130,14 @@
 
       .stat-label {
         font-size: 1.2rem;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-feature-list {
+      li {
+        min-width: 100%;
       }
     }
   }

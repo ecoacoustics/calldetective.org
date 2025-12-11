@@ -1,13 +1,15 @@
 <div>
-  <p class="md-typescale-body-medium">
-    Explore how researchers and citizen scientists are using Call Detective
-  </p>
+  <h2 class="md-typescale-body-medium">
+    Example Projects
+  </h2>
 
   <div class="example-grid">
     {{ range .Site.Params.showcase }}
     <md-elevated-card class="card">
       <div class="card-media">
-        <img src="{{ .image }}" alt="Screenshot of the {{ .title }} website" />
+        <a href="{{ .link }}">
+          <img src="{{ .image }}" alt="Screenshot of the {{ .title }} website" />
+        </a>
       </div>
 
       <div class="card-content">
@@ -16,7 +18,7 @@
       </div>
 
       <div class="card-footer">
-        <md-filled-tonal-button>View Project</md-filled-tonal-button>
+        <md-filled-tonal-button>Visit Project</md-filled-tonal-button>
       </div>
     </md-elevated-card>
     {{ end }}
