@@ -1,14 +1,15 @@
 <div>
-  <h2 class="md-typescale-body-medium">
-    Example Projects
-  </h2>
+  <h2 class="join-in-heading md-typescale-body-large">Contribute your verifications</h2>
 
   <div class="example-grid">
     {{ range .Site.Params.showcase }}
     <md-elevated-card class="card">
       <div class="card-media">
         <a href="{{ .link }}">
-          <img src="{{ .image }}" alt="Screenshot of the {{ .title }} website" />
+          <img
+            src="{{ .image }}"
+            alt="Screenshot of the {{ .title }} website"
+          />
         </a>
       </div>
 
@@ -18,16 +19,44 @@
       </div>
 
       <div class="card-footer">
-        <md-filled-tonal-button>Visit Project</md-filled-tonal-button>
+        <a href="{{ .link }}">
+          <md-filled-tonal-button>Visit Project</md-filled-tonal-button>
+        </a>
       </div>
     </md-elevated-card>
     {{ end }}
+
+    <md-elevated-card class="card">
+      <div class="card-media">
+        <a href="https://openecoacoustics.org/contact/">
+          <md-outlined-button class="new-button">
+            <md-icon>add</md-icon>
+          </md-outlined-button>
+        </a>
+      </div>
+
+      <div class="card-content">
+        <h3 class="md-typescale-title-large">Add your website</h3>
+        <p class="md-typescale-body-medium">
+          You can contact
+          <a href="https://openecoacoustics.org/contact/">contact us</a> to
+          create your own project.
+        </p>
+      </div>
+
+      <div class="card-footer"></div>
+    </md-elevated-card>
   </div>
 
   {{- .Inner -}}
 </div>
 
 <style>
+  .join-in-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
   .example-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -38,5 +67,15 @@
       margin: 0;
       max-width: 400px;
     }
+  }
+
+  .new-button {
+    --_container-shape-start-start: 0;
+    --_container-shape-start-end: 0;
+    --_container-shape-end-start: 0;
+    --_container-shape-end-end: 0;
+
+    width: 100%;
+    height: 100%;
   }
 </style>

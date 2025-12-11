@@ -30,6 +30,8 @@
   --md-sys-typescale-headline-medium-size: 2rem;
   --md-sys-typescale-headline-medium-line-height: 2.5rem;
   --md-sys-typescale-headline-medium-weight: 500;
+
+  --md-filled-tonal-button-container-color: var(--md-sys-color-secondary-container);
 }
 
 :root {
@@ -98,9 +100,22 @@ h2 {
   font-size: 2rem !important;
 }
 
+a {
+  color: var(--md-sys-color-primary);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .dark-section {
   color: var(--md-sys-color-on-surface);
   background-color: var(--md-sys-color-surface);
+}
+
+.showcase-section {
+  padding-top: 0 !important;
 }
 
 .double-column {
@@ -135,6 +150,9 @@ h2 {
   .card-media {
     width: 100%;
     aspect-ratio: 16 / 9;
+
+    min-height: 250px;
+    background-size: cover;
 
     border-bottom: 1px solid var(--md-sys-color-outline);
 
