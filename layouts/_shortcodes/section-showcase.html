@@ -3,9 +3,9 @@
     Explore how researchers and citizen scientists are using Call Detective
   </p>
 
-  <div class="card-grid">
+  <div class="example-grid">
     {{ range .Site.Params.showcase }}
-    <md-elevated-card class="example-card">
+    <md-elevated-card class="card">
       <div class="card-media">
         <img src="/image-placeholder.png" alt="Rainforest bird calls project" />
       </div>
@@ -22,56 +22,12 @@
 </div>
 
 <style>
-  .example-card {
-    display: flex;
-    flex-direction: column;
-    border-radius: 12px;
-    background-color: var(--md-sys-color-surface);
-    --md-elevated-card-container-elevation: 1;
-  }
-
-  .card-media {
-    width: 100%;
-    height: 180px;
-    overflow: hidden;
-  }
-
-  .card-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .card-content {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    flex-grow: 1;
-  }
-
-  .card-content h3 {
-    margin: 0;
-  }
-
-  .card-content p {
-    margin: 0;
-    color: var(--md-sys-color-on-surface-variant);
-    flex-grow: 1;
-  }
-
-  .card-content md-filled-tonal-button {
-    align-self: flex-start;
-  }
-
-  .about-image {
-    border-radius: 16px;
-    aspect-ratio: 4/3;
-  }
-
-  .about-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .example-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin-block: 0 32px;
+    padding: 0 16px;
   }
 </style>
