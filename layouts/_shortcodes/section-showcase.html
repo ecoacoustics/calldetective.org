@@ -7,11 +7,15 @@
     {{ range .Site.Params.showcase }}
     <md-elevated-card class="card">
       <div class="card-media">
-        <img src="/image-placeholder.png" alt="Rainforest bird calls project" />
+        <img src="{{ .image }}" alt="Screenshot of the {{ .title }} website" />
       </div>
+
       <div class="card-content">
         <h3 class="md-typescale-title-large">{{ .title }}</h3>
         <p class="md-typescale-body-medium">{{ .description }}</p>
+      </div>
+
+      <div class="card-footer">
         <md-filled-tonal-button>View Project</md-filled-tonal-button>
       </div>
     </md-elevated-card>
@@ -29,6 +33,7 @@
     justify-items: center;
 
     & > * {
+      margin: 0;
       max-width: 400px;
     }
   }

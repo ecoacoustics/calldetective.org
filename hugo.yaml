@@ -35,16 +35,19 @@ params:
     surface: "#1d1d1d"
     on_surface: "#ffffff"
 
+    surface_container: "#2a2a2a"
+    surface_container_low: "#3a3a3a"
+
     surface_variant: "#fffff"
     on_surface_variant: "#1a1a1a"
 
     outline: "#6f7978"
   showcase:
-    - title: "Explore Acoustic Data"
+    - title: "Can you hear an Australasian Bittern"
       description: "Discover how Call Detective can help you analyze and visualize large-scale acoustic datasets with ease."
-      image: "images/showcase1.png"
-      link: "/explore"
-    - title: "Explore Acoustic Data"
-      description: "Discover how Call Detective can help you analyze and visualize large-scale acoustic datasets with ease."
-      image: "images/showcase1.png"
-      link: "/explore"
+      image: "/bittern-preview.webp"
+      link: "https://bittern.calldetective.org/"
+    - title: "Whoo's Calling"
+      image: "/powerful-owl-preview.webp"
+      description: "Whoo's Calling"
+      link: "https://powerful-owl.calldetective.org/"
