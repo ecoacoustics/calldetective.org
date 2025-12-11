@@ -8,8 +8,8 @@
   --md-sys-color-primary-container: {{ .Site.Params.colors.primary_container }};
   --md-sys-color-on-primary-container: {{ .Site.Params.colors.on_primary_container }};
 
-  --md-sys-color-secondary-container: #B39DDB; /* filled-tonal background */
-  --md-sys-color-on-secondary-container: #1F1B2E; /* text/icon color on that background */
+  --md-sys-color-secondary-container: {{ .Site.Params.colors.primary }};
+  --md-sys-color-on-secondary-container: {{ .Site.Params.colors.on_primary }};
 
   --md-sys-color-surface: {{ .Site.Params.colors.surface }};
   --md-sys-color-on-surface: {{ .Site.Params.colors.on_surface }};
@@ -107,11 +107,6 @@ a {
   &:hover {
     text-decoration: underline;
   }
-}
-
-md-filled-tonal-button {
-  --_container-color: var(--md-sys-color-primary) !important;
-  --_label-text-color: var(--md-sys-color-on-primary) !important;
 }
 
 .dark-section {
