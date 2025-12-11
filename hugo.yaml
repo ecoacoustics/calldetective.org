@@ -15,8 +15,17 @@ params:
     primary: "hsl(30deg, 62%, 49%)"
     on_primary: "#ffffff"
     primary_container: "#1d1d1d"
-    surface: "#fafdfc"
-    surface_variant: "#dae5e4"
+    on_primary_container: "#ffffff"
+
+    secondary: "hsl(30deg, 62%, 49%)"
+    on_secondary: "#ffffff"
+    secondary_container: "hsl(30deg, 62%, 49%)"
+    on_secondary_container: "#ffffff"
+
+    surface: "#1d1d1d"
     on_surface: "#ffffff"
-    on_surface_variant: "#000000"
+
+    surface_variant: "#fffff"
+    on_surface_variant: "#1a1a1a"
+
     outline: "#6f7978"

@@ -1,7 +1,16 @@
 :root {
   --md-sys-color-primary: {{ .Site.Params.colors.primary }};
   --md-sys-color-on-primary: {{ .Site.Params.colors.on_primary }};
+
+  --md-sys-color-secondary: {{ .Site.Params.colors.primary }};
+  --md-sys-color-on-secondary: {{ .Site.Params.colors.on_primary }};
+
   --md-sys-color-primary-container: {{ .Site.Params.colors.primary_container }};
+  --md-sys-color-on-primary-container: {{ .Site.Params.colors.on_primary_container }};
+
+  --md-sys-color-secondary-container: #B39DDB; /* filled-tonal background */
+  --md-sys-color-on-secondary-container: #1F1B2E; /* text/icon color on that background */
+
   --md-sys-color-surface: {{ .Site.Params.colors.surface }};
   --md-sys-color-surface-variant: {{ .Site.Params.colors.surface_variant }};
   --md-sys-color-on-surface: {{ .Site.Params.colors.on_surface }};
