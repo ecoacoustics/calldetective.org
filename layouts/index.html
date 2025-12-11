@@ -1,12 +1,22 @@
 {{ define "main" }}
-{{ $css := resources.Get "css/main.css" }}
-{{- $css = $css | resources.ExecuteAsTemplate "css/main.css" . | css.Sass }}
+  {{ $css := resources.Get "css/main.css" }}
+  {{- $css = $css | resources.ExecuteAsTemplate "css/main.css" . | css.Sass }}
 
-{{- with  $css }}
-  {{- with . | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+  {{- with  $css }}
+    {{- with . | minify | fingerprint }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{- end }}
   {{- end }}
-{{- end }}
 
-<div id="home-page" class="page">{{ .Content }}</div>
+  {{ $cssReset := resources.Get "css/resets.css" }}
+  {{- $cssReset = $cssReset | resources.ExecuteAsTemplate "css/resets.css" . | css.Sass }}
+
+  {{- with  $cssReset }}
+    {{- with . | minify | fingerprint }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{- end }}
+  {{- end }}
+
+
+  <main id="home-page" class="page">{{ .Content }}</main>
 {{ end }}

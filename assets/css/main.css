@@ -12,23 +12,143 @@
   --md-sys-color-on-secondary-container: #1F1B2E; /* text/icon color on that background */
 
   --md-sys-color-surface: {{ .Site.Params.colors.surface }};
-  --md-sys-color-surface-variant: {{ .Site.Params.colors.surface_variant }};
   --md-sys-color-on-surface: {{ .Site.Params.colors.on_surface }};
+
+  --md-sys-color-surface-variant: {{ .Site.Params.colors.surface_variant }};
   --md-sys-color-on-surface-variant: {{ .Site.Params.colors.on_surface_variant }};
+
   --md-sys-color-outline: {{ .Site.Params.colors.outline }};
+
+  --md-sys-typescale-body-medium-size: 1.2rem;
+  --md-sys-typescale-body-medium-line-height: 2rem;
+
+  --md-sys-typescale-headline-medium-font: "Roboto", sans-serif;
+  --md-sys-typescale-headline-medium-size: 2rem;
+  --md-sys-typescale-headline-medium-line-height: 2.5rem;
+  --md-sys-typescale-headline-medium-weight: 500;
+}
+
+:root {
+  /* Fonts */
+  --micro-heading-font: "Inter", sans-serif;
+  --micro-body-font: "Inter", sans-serif;
+  --micro-font-color: #000;
+  --micro-font-color-light: #fff;
+  --micro-font-color-toned: #707070;
+  --micro-inverse-color: #000;
+  --micro-heading-color: #000;
+
+  --micro-nav-background-color: var(--micro-background-light);
+  --micro-nav-font-color: var(--micro-font-color);
+
+  --micro-footer-background-color: var(--sl-color-primary-950);
+  --micro-footer-font-color: var(--micro-font-color-light);
+
+  /* Backgrounds */
+  --micro-background-light: #fff;
+  --micro-background-dark: #000;
+  --micro-panel-color: #fcfcfc;
+
+  /* Font Sizes */
+  --micro-font-size-xsmall: 0.8rem;
+  --micro-font-size-small: 1rem;
+  --micro-font-size-medium: 1.5rem;
+  --micro-font-size-larger: 2.25rem;
+  --micro-font-size-xlarge: 4.5rem;
+
+  /* Paddings */
+  --micro-padding-small: 0.5rem;
+  --micro-padding-medium: 1rem;
+  --micro-padding-large: 2rem;
+  --micro-padding-xlarge: 2.5rem;
+
+  /*
+        The minimum amount of space either side of the main (non-fullbleed)
+        content.
+        This is the amount of padding around the main content on mobile.
+    */
+  --micro-gutter-size: 0.75rem;
+
+  /* Other */
+  --micro-navbar-height: 72px;
+  --micro-navbar-padding: var(--micro-padding-medium);
+  --micro-panel-opacity: 0.8;
+  --micro-transition-duration: 0.3s;
+  --micro-transition-timing: ease-in-out;
+  --micro-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --micro-box-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --micro-border-radius: 0.25rem;
+}
+
+/* Theme overrides */
+.oe-header {
+  display: none;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  background-color: var(--md-sys-color-surface);
-  color: var(--md-sys-color-on-surface);
 }
 
-/* Hero Section */
-.hero {
-  width: 100%;
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem !important;
+}
+
+.page-section {
+  padding-block: 2rem;
+}
+
+.hero-blurb {
+  text-align: center;
+  font-size: 2rem;
+
+  .hero-blurb-title {
+    margin-bottom: 1.5rem;
+  }
+
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface);
+
+  .blurb-double-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    max-width: 50ch;
+
+    margin-inline: auto;
+    margin-bottom: 1rem;
+  }
+
+  .hero-feature-list {
+    display: flex;
+    gap: 2rem;
+    margin-block: 3rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    margin-block: 3rem;
+    gap: 6rem;
+
+    .hero-stat {
+      letter-spacing: -0.025em;
+    }
+
+    .stat-number {
+      color: var(--md-sys-color-primary);
+    }
+
+    .stat-label {
+      font-size: 1.2rem;
+    }
+  }
 }
 
 .hero-image {
@@ -37,6 +157,39 @@ body {
   height: 60vh;
   min-height: 400px;
   overflow: hidden;
+}
+
+/* subtle fade to black at the bottom of the hero image */
+.hero-image::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30%;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.35) 90%,
+    rgba(0, 0, 0, 0.70) 100%
+  );
+  z-index: 1;
+}
+
+/* ensure the image and overlay stack properly */
+.hero-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  z-index: 2;
 }
 
 .hero-image img {
@@ -51,11 +204,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.6)
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,50 +218,15 @@ body {
 
 .hero-overlay h1 {
   margin: 0 0 16px 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  font-size: 4rem;
 }
 
 .hero-overlay p {
   margin: 0;
   max-width: 600px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.hero-blurb {
-  padding: 32px 24px;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.hero-blurb p {
-  margin: 0;
-  color: var(--md-sys-color-on-surface-variant);
-  /* Increase font size for better readability */
-  font-size: 1.125rem; /* ~18px */
-  line-height: 1.6;
-}
-
-/* Also target the typescale class if used directly */
-.hero-blurb .md-typescale-body-large {
-  font-size: 1.125rem;
-  line-height: 1.6;
-}
-
-/* CTA Section */
-.cta-section {
-  padding: 48px 24px;
-  text-align: center;
-  background-color: var(--md-sys-color-surface-variant);
-}
-
-.cta-section h2 {
-  margin: 0 0 8px 0;
-}
-
-.cta-section > p {
-  margin: 0 0 32px 0;
-  color: var(--md-sys-color-on-surface-variant);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+  letter-spacing: -0.025em;
 }
 
 .card-grid {
@@ -118,7 +234,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
   max-width: 1200px;
-  margin: 0 auto 32px auto;
+  margin-block: 0 32px;
   padding: 0 16px;
 }
 
@@ -126,7 +242,6 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 12px;
-  overflow: hidden;
   background-color: var(--md-sys-color-surface);
   --md-elevated-card-container-elevation: 1;
 }
@@ -165,70 +280,8 @@ body {
   align-self: flex-start;
 }
 
-.cta-button {
-  margin-top: 16px;
-}
-
-/* About Section */
-.about-section {
-  padding: 64px 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.about-content h2 {
-  margin: 0 0 32px 0;
-  text-align: center;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: start;
-}
-
-@media (max-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.about-text h3 {
-  margin: 24px 0 12px 0;
-}
-
-.about-text p {
-  margin: 0 0 16px 0;
-  color: var(--md-sys-color-on-surface-variant);
-  line-height: 1.6;
-}
-
-.feature-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.feature-list li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--md-sys-color-outline);
-}
-
-.feature-list li:last-child {
-  border-bottom: none;
-}
-
-.feature-list md-icon {
-  color: var(--md-sys-color-primary);
-}
-
 .about-image {
   border-radius: 16px;
-  overflow: hidden;
   aspect-ratio: 4/3;
 }
 
@@ -238,25 +291,85 @@ body {
   object-fit: cover;
 }
 
-/* Footer CTA */
-.footer-cta {
-  padding: 64px 24px;
-  text-align: center;
-  background-color: var(--md-sys-color-primary-container);
+/* Theming */
+body {
+  display: grid;
+
+  /*
+        By using the [name-start] and [name-end] grid area syntax, we are able
+        to use a subgrid area by simply using the "name".
+
+        E.g. If you want an element to fullbleed (extend to the edges of the
+        page) you can simply do
+        grid-area: fullbleed
+
+        ---
+
+        Additionally, note that the gutters have a minimum size of the inner
+        content meaning that if you add content to the gutters (e.g. a sidebar
+        menu), it will tax the main content container for the space.
+    */
+  grid-template-columns:
+    [fullbleed-start] minmax(var(--micro-gutter-size), auto) [main-start] calc(min(80rem, 90%)) [main-end] minmax(var(--micro-gutter-size), auto) [fullbleed-end];
+
+  /*
+        By using the max between 4rem and auto, we can ensure that the header
+        and footer will be at least 4rem in height, but can expand if the
+        content is larger.
+    */
+  grid-template-rows:
+    [header-start] minmax(4rem, auto) [header-end main-start] minmax(4rem, auto) [main-end footer-start] 4rem [footer-end];
+
+  min-height: 100dvh;
+
+  &>main {
+    /*
+            Restrict page content to using the column-subgrid so that consumers
+            of this theme cannot create out-of-order positioned elements by
+            assigning a content to the a "header" subgrid row.
+        */
+    display: grid;
+    grid-template-columns: subgrid;
+
+    grid-row: main;
+    grid-column: fullbleed;
+
+    .page>* {
+      /*
+                By default, we want the content to be centered.
+                If you want your content to extend to the edge of the page,
+                you can simply use the "fullbleed" class.
+            */
+      grid-column: main;
+    }
+  }
 }
 
-.footer-cta h2 {
-  margin: 0 0 8px 0;
+/*
+    The page-section layout is designed so that additional elements such as
+    ::before and ::after pseudo elements are appended to the top and bottom of
+    the section.
+
+    This differs from the normal "block" flow where ::before and ::after pseudo
+    elements are append to the left/right positions.
+*/
+section.page-section {
+  display: grid;
+  grid-template-columns: subgrid;
+
+  &>.page-section-content {
+    grid-column: main;
+  }
 }
 
-.footer-cta p {
-  margin: 0 0 24px 0;
-  color: var(--md-sys-color-on-surface-variant);
+/*
+    You can use the .page helper class to create a scope for a certain page
+    while not effecting the page flow.
+*/
+.page {
+  display: contents;
 }
 
-.footer-buttons {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
+.fullbleed {
+  grid-column: fullbleed !important;
 }

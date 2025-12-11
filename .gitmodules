@@ -1,0 +1,3 @@
+[submodule "themes/microsite-template"]
+	path = themes/microsite-template
+	url = git@github.com:ecoacoustics/microsite-template.git

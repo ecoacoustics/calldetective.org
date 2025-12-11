@@ -28,6 +28,9 @@
     ],
     "markdownlint.config": {
       "MD033": false
+    },
+    "[css]": {
+      "editor.defaultFormatter": "vscode.css-language-features"
     }
   },
   "extensions": {
