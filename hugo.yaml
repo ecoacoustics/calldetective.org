@@ -58,9 +58,9 @@ params:
       verifiedCountFilter: ""
   sponsors:
     logos:
-      - image: "/google-logo.webp"
+      - image: "images/google-logo.webp"
         alt: "Google logo"
         url: "https://www.google.com"
-      - image: "/deepmind-logo.webp"
+      - image: "images/deepmind-logo.webp"
         alt: "Google Deepmind logo"
         url: "https://deepmind.google"
