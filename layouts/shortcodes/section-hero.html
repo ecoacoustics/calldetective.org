@@ -10,6 +10,7 @@
       src="/hero-image-1920w.webp"
       sizes="100vw"
       alt="Landscape photograph of the Australian outback plains with a lone tree in the foreground and mountains in the distance"
+      loading="eager"
     />
     {{- with .Get "citation" -}}
     <figcaption class="hero-citation">
@@ -62,8 +63,6 @@
     height: 100%;
     object-fit: cover;
     z-index: 0;
-
-    image-rendering: pixelated;
   }
 
   .hero-citation {
