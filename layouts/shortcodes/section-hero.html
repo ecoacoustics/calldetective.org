@@ -4,7 +4,11 @@
       src="/Buffel-Grass-pasture-botanical-survey-at-Cungelella-1-1.jpeg"
       alt="Ecoacoustic landscape with wildlife sounds"
     />
-    <figcaption></figcaption>
+    {{- with .Get "citation" -}}
+    <figcaption class="hero-citation">
+      <cite>{{- . -}}</cite>
+    </figcaption>
+    {{- end -}}
   </figure>
 
   <div class="hero-overlay">
@@ -51,6 +55,23 @@
     height: 100%;
     object-fit: cover;
     z-index: 0;
+  }
+
+  .hero-citation {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-size: 0.8rem;
+    color: white;
+    background-color: black;
+
+    z-index: 3;
+    padding: 0.5rem 0.75rem;
+    border-top-left-radius: 0.25rem;
+
+    cite {
+      font-style: normal;
+    }
   }
 
   .hero-overlay {
