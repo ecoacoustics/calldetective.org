@@ -1,8 +1,13 @@
 <div class="hero-container">
   <figure class="hero-image">
     <img
-      src="/Buffel-Grass-pasture-botanical-survey-at-Cungelella-1-1.jpeg"
-      alt="Ecoacoustic landscape with wildlife sounds"
+      srcset="
+        /hero-image-1280w.webp 1280w,
+        /hero-image-1920w.webp 1920w,
+        /hero-image-2560w.webp 2560w,
+        /hero-image-3840w.webp 3840w
+      "
+      alt="Landscape photograph of the australian outback plains with a lone tree in the foreground and mountains in the distance"
     />
     {{- with .Get "citation" -}}
     <figcaption class="hero-citation">
