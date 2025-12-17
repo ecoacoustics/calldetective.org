@@ -1,8 +1,16 @@
 <div class="hero-container">
   <figure class="hero-image">
     <img
-      src="/Buffel-Grass-pasture-botanical-survey-at-Cungelella-1-1.jpeg"
-      alt="Ecoacoustic landscape with wildlife sounds"
+      srcset="
+        /hero-image-1280w.webp 1280w,
+        /hero-image-1920w.webp 1920w,
+        /hero-image-2560w.webp 2560w,
+        /hero-image-3840w.webp 3840w
+      "
+      src="/hero-image-1920w.webp"
+      sizes="100vw"
+      alt="Landscape photograph of the Australian outback plains with a lone tree in the foreground and mountains in the distance"
+      loading="eager"
     />
     {{- with .Get "citation" -}}
     <figcaption class="hero-citation">
@@ -53,6 +61,9 @@
     left: 0;
     width: 100%;
     height: 100%;
+
+    image-rendering: pixelated;
+
     object-fit: cover;
     z-index: 0;
   }
@@ -90,7 +101,7 @@
     text-align: center;
     color: white;
     background: linear-gradient(to bottom,
-        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.0),
         rgba(0, 0, 0, 0.2));
 
     z-index: 2;
