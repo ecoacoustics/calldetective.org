@@ -59,25 +59,13 @@
 
   .example-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), max-content));
     gap: 2.5rem;
-    justify-items: center;
+    justify-content: center;
 
     & > * {
       margin: 0;
       max-width: 400px;
-    }
-  }
-
-  @media (max-width: 77em) {
-    .example-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  @media (max-width: 48em) {
-    .example-grid {
-      grid-template-columns: 1fr;
     }
   }
 
