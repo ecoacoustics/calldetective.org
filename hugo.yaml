@@ -63,7 +63,7 @@ params:
       eventCountFilter: ""
       verifiedCountFilter: ""
     - title: "Whoo's Calling"
-      image: "/powerful-owl-preview.webp"
+      image: "/whoos_calling.jpg"
       description: "Birdlife Australia is using a Call Detective project to validate powerful owl calls created by AI workflows."
       link: "https://powerful-owl.calldetective.org/"
       eventCountFilter: ""
