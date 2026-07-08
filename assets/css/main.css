@@ -169,6 +169,7 @@ a {
   display: flex;
   flex-direction: column;
   width: 100%;
+  min-width: 350px;
 
   color: var(--md-sys-color-on-surface);
   background-color: var(--md-sys-color-surface-container);
@@ -180,7 +181,7 @@ a {
     width: 100%;
     aspect-ratio: 16 / 9;
 
-    min-height: 250px;
+    min-height: 220px;
     background-size: cover;
 
     border-bottom: 1px solid var(--md-sys-color-outline);
