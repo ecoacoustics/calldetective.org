@@ -1,3 +1,4 @@
 [submodule "themes/microsite-template"]
 	path = themes/microsite-template
 	url = https://github.com/ecoacoustics/microsite-template
+	branch = campaign-species-filters
