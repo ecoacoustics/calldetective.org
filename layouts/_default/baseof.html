@@ -7,6 +7,8 @@
 
     {{ $css := resources.Get "css/main.css" }}
     {{- $css = $css | resources.ExecuteAsTemplate "css/main.css" . | css.Sass }}
+    {{- $mapCSS := resources.Get "css/map.css" }}
+    {{- $css = slice $css $mapCSS | resources.Concat "css/main.css" }}
 
     {{- with  $css }}
       {{- with . | minify | fingerprint }}
@@ -47,6 +49,8 @@
   </head>
 
   <body>
-    {{ block "main" . }}{{ end }}
+    <main>
+      {{ block "main" . }}{{ end }}
+    </main>
   </body>
 </html>

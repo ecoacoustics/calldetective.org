@@ -118,6 +118,17 @@ a {
   padding-top: 0 !important;
 }
 
+.map {
+  min-height: var(--map-min-height);
+  margin-bottom: 2rem !important;
+}
+
+@media (max-width: 48em /* 768px */) {
+  .map {
+    min-height: var(--map-min-height-mobile);
+  }
+}
+
 .double-column {
   display: grid;
   grid-template-columns: 1fr 1fr;

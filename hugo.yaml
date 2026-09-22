@@ -16,6 +16,14 @@ module:
   hugoVersion:
     extended: true
     min: 0.125.0
+security:
+  allowContent:
+    - ^text/html$
+    - ^text/markdown$
+  funcs:
+    getenv:
+      - "^GOOGLE_MAPS_API_KEY$"
+      - "^GOOGLE_MAPS_MAP_ID$"
 markup:
   goldmark:
     renderer:
@@ -76,3 +84,30 @@ params:
       - image: "images/deepmind-logo.webp"
         alt: "Google Deepmind logo"
         url: "https://deepmind.google"
+  map:
+    sites:
+      - campaign: "Can you hear an Australasian Bittern"
+        latitude: -38
+        longitude: 145
+        page: "https://bittern.calldetective.org/"
+        description: "Validating Australasian bittern calls across remote wetland recording sites."
+      - campaign: "Where are the Gang-gangs?"
+        latitude: -37
+        longitude: 142
+        page: "https://gang-gangs.calldetective.org"
+        description: "Museums Victoria identifies gang-gang cockatoos in acoustic recordings."
+      - campaign: "Tassie Calling"
+        latitude: -42
+        longitude: 146.5
+        page: "https://tassie-calling.calldetective.org/"
+        description: "Protect Tasmania advances bioacoustic monitoring for threatened species conservation."
+      - campaign: "Whoo's Calling"
+        latitude: -33.9
+        longitude: 151.2
+        page: "https://powerful-owl.calldetective.org/"
+        description: "Birdlife Australia validates AI-generated powerful owl calls."
+      - campaign: "Australian Acoustic Observatory Tour"
+        latitude: -27.5
+        longitude: 137.5
+        page: "#"
+        description: "Coming soon."
