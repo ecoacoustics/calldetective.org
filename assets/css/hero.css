@@ -1,0 +1,101 @@
+/* Page hero (layouts/partials/hero.html), used on the homepage and contact page */
+.hero-container {
+  position: relative;
+  min-height: var(--micro-hero-min-height);
+  overflow: hidden;
+  display: grid;
+
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .hero-citation {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    padding: var(--micro-padding-small) 0.75rem;
+    border-top-left-radius: var(--micro-border-radius);
+
+    color: var(--micro-font-color-light);
+    background-color: var(--micro-background-dark);
+    font-size: var(--micro-font-size-xsmall);
+
+    z-index: 2;
+
+    cite {
+      font-style: normal;
+    }
+  }
+
+  .hero-overlay {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem var(--micro-padding-medium-large) var(--micro-padding-xlarge);
+
+    text-align: center;
+    background-color: var(--md-sys-color-overlay);
+  }
+
+  .hero-title {
+    color: var(--md-sys-color-primary);
+  }
+
+  .hero-tagline {
+    margin: var(--micro-padding-medium-large) 0 0;
+    max-width: var(--micro-text-max-width);
+    color: var(--md-sys-color-surface);
+  }
+
+  /* Buttons and stats (showActions) */
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--micro-padding-medium);
+    margin-top: var(--micro-padding-xlarge);
+
+    --md-outlined-button-container-height: 48px;
+    --md-outlined-button-outline-color: var(--md-sys-color-outline);
+    --md-outlined-button-label-text-color: var(--md-sys-color-primary);
+    --md-outlined-button-hover-label-text-color: var(--md-sys-color-primary);
+    --md-outlined-button-focus-label-text-color: var(--md-sys-color-primary);
+    --md-outlined-button-pressed-label-text-color: var(--md-sys-color-primary);
+    --md-filled-tonal-button-container-height: 48px;
+  }
+
+  .hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 5rem;
+    row-gap: var(--micro-padding-medium);
+    margin: var(--micro-padding-xlarge) 0 0;
+
+    color: var(--md-sys-color-surface-container-high);
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column-reverse;
+
+    dd {
+      margin: 0;
+      font-size: var(--micro-font-size-larger);
+      line-height: 4rem;
+    }
+  }
+}

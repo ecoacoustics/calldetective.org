@@ -2,14 +2,14 @@
   --md-sys-color-primary: {{ .Site.Params.colors.primary }};
   --md-sys-color-on-primary: {{ .Site.Params.colors.on_primary }};
 
-  --md-sys-color-secondary: {{ .Site.Params.colors.primary }};
-  --md-sys-color-on-secondary: {{ .Site.Params.colors.on_primary }};
+  --md-sys-color-secondary: {{ .Site.Params.colors.secondary }};
+  --md-sys-color-on-secondary: {{ .Site.Params.colors.on_secondary }};
 
   --md-sys-color-primary-container: {{ .Site.Params.colors.primary_container }};
   --md-sys-color-on-primary-container: {{ .Site.Params.colors.on_primary_container }};
 
-  --md-sys-color-secondary-container: {{ .Site.Params.colors.primary }};
-  --md-sys-color-on-secondary-container: {{ .Site.Params.colors.on_primary }};
+  --md-sys-color-secondary-container: {{ .Site.Params.colors.secondary_container }};
+  --md-sys-color-on-secondary-container: {{ .Site.Params.colors.on_secondary_container }};
 
   --md-sys-color-surface: {{ .Site.Params.colors.surface }};
   --md-sys-color-on-surface: {{ .Site.Params.colors.on_surface }};
@@ -17,28 +17,27 @@
   --md-sys-color-surface-variant: {{ .Site.Params.colors.surface_variant }};
   --md-sys-color-on-surface-variant: {{ .Site.Params.colors.on_surface_variant }};
 
+  --md-sys-color-surface-container-lowest: {{ .Site.Params.colors.surface_container_lowest }};
   --md-sys-color-surface-container-high: {{ .Site.Params.colors.surface_container_high }};
   --md-sys-color-surface-container: {{ .Site.Params.colors.surface_container }};
   --md-sys-color-surface-container-low: {{ .Site.Params.colors.surface_container_low }};
 
   --md-sys-color-outline: {{ .Site.Params.colors.outline }};
+  --md-sys-color-overlay: {{ .Site.Params.colors.overlay }};
   --md-sys-color-error: {{ .Site.Params.colors.error }};
 
-  --md-sys-typescale-body-medium-size: 1.2rem;
-  --md-sys-typescale-body-medium-line-height: 2rem;
-
-  --md-sys-typescale-headline-medium-font: "Roboto", sans-serif;
-  --md-sys-typescale-headline-medium-size: 2rem;
-  --md-sys-typescale-headline-medium-line-height: 2.5rem;
-  --md-sys-typescale-headline-medium-weight: 500;
+  --md-ref-typeface-brand: "Google Sans", sans-serif;
+  --md-ref-typeface-plain: "Google Sans Text", sans-serif;
+  --md-ref-typeface-accent: "Playfair Display", serif;
 
   --md-filled-tonal-button-container-color: var(--md-sys-color-secondary-container);
 }
 
 :root {
   /* Fonts */
-  --micro-heading-font: "Inter", sans-serif;
-  --micro-body-font: "Inter", sans-serif;
+  --micro-heading-font: var(--md-ref-typeface-brand);
+  --micro-body-font: var(--md-ref-typeface-plain);
+  --micro-accent-font: var(--md-ref-typeface-accent);
   --micro-font-color: #000;
   --micro-font-color-light: #fff;
   --micro-font-color-toned: #707070;
@@ -66,8 +65,11 @@
   /* Paddings */
   --micro-padding-small: 0.5rem;
   --micro-padding-medium: 1rem;
+  --micro-padding-medium-large: 1.5rem;
   --micro-padding-large: 2rem;
   --micro-padding-xlarge: 2.5rem;
+
+  --micro-text-max-width: 36rem;
 
   /*
         The minimum amount of space either side of the main (non-fullbleed)
@@ -75,6 +77,9 @@
         This is the amount of padding around the main content on mobile.
     */
   --micro-gutter-size: 0.75rem;
+
+  /* Minimum height of the page hero (layouts/partials/hero.html) */
+  --micro-hero-min-height: 480px;
 
   /* Other */
   --micro-navbar-height: 72px;
@@ -90,15 +95,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
-
-  /* background-color: hsl(45, 46%, 95%); */
-  background-color: hsl(45, 29%, 97%);
-}
-
-h2 {
-  font-family: "Roboto", sans-serif;
-  font-size: 2rem !important;
+  font-family: var(--micro-body-font);
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface);
 }
 
 a {
@@ -110,110 +109,15 @@ a {
   }
 }
 
-.dark-section {
-  color: var(--md-sys-color-on-surface);
-  background-color: var(--md-sys-color-surface);
-}
-
-.showcase-section {
-  padding-top: 0 !important;
-}
-
-.double-column {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-
-  margin-inline: auto;
-  margin-bottom: 1rem;
-
-  p {
-    text-align: justify;
-    letter-spacing: 0.5px;
-
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-  }
-}
-
-@media (max-width: 64em /* 1024px */) {
-  .double-column {
-    gap: 4rem;
-
-    p {
-      text-align: left;
-    }
-  }
-}
-
-@media (max-width: 48em /* 768px */) {
-  .double-column {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-
-    p {
-      margin: 0;
-    }
-  }
+/* Serif italic highlight used inside headings */
+.accent {
+  font-family: var(--micro-accent-font);
+  font-style: italic;
+  font-weight: 500;
 }
 
 .page-section {
-  padding-block: 2rem;
-}
-
-.card {
-  --md-elevated-card-container-elevation: 1;
-
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-width: 350px;
-
-  color: var(--md-sys-color-on-surface);
-  background-color: var(--md-sys-color-surface-container);
-
-  border-radius: 12px;
-  contain: content;
-
-  .card-media {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-
-    min-height: 220px;
-    background-size: cover;
-
-    border-bottom: 1px solid var(--md-sys-color-outline);
-
-    contain: content;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-  }
-
-  .card-content {
-    padding: 2rem;
-    background-color: var(--md-sys-color-surface-container-low);
-    height: 100%;
-
-    contain: content;
-  }
-
-  .card-footer {
-    padding: 1rem;
-    margin-top: auto;
-
-    background-color: var(--md-sys-color-surface-container-low);
-
-    contain: content;
-  }
+  padding-block: 3.5rem;
 }
 
 /* Theming */
@@ -238,12 +142,10 @@ body {
     [fullbleed-start] minmax(var(--micro-gutter-size), auto) [main-start] calc(min(80rem, 90%)) [main-end] minmax(var(--micro-gutter-size), auto) [fullbleed-end];
 
   /*
-        By using the max between 4rem and auto, we can ensure that the header
-        and footer will be at least 4rem in height, but can expand if the
-        content is larger.
+        This site has no header/footer rows: <main class="page"> uses
+        display: contents, so every section is its own auto-sized row.
     */
-  grid-template-rows:
-    [header-start] minmax(4rem, auto) [header-end main-start] minmax(4rem, auto) [main-end footer-start] 4rem [footer-end];
+  align-content: start;
 
   min-height: 100dvh;
 

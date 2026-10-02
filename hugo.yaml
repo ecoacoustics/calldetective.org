@@ -20,46 +20,85 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+security:
+  allowContent:
+    - "! ^text/org$"
+  funcs:
+    getenv:
+      - "^HUGO_"
+      - "^CI$"
+      # Read by the theme's map shortcode. Set these locally and in Netlify.
+      - "^GOOGLE_MAPS_API_KEY$"
+      - "^GOOGLE_MAPS_MAP_ID$"
 params:
+  # Headline stats shown in the hero (layouts/partials/hero.html). Projects
+  # isn't listed here — it's counted from params.showcase automatically.
+  stats:
+    events: 45071
+    verifications: 21980
+  map:
+    # Theme default 4 is too tight to fit full Australia on mobile.
+    min_zoom: 3
+    sites:
+      - campaign: "Daintree Rainforest Observatory"
+        latitude: -16.103236
+        longitude: 145.452491
+        location: "Cape Tribulation, Queensland"
+        image: "/daintree.jpg"
+        audio: "https://api.acousticobservatory.org/audio_recordings/492563/media.mp3?end_offset=5880&start_offset=5850"
+      - campaign: "Mount Barney"
+        latitude: -28.234639
+        longitude: 152.641407
+        location: "Scenic Rim, Queensland"
+        image: "/mtbarney.jpg"
+        audio: "https://api.acousticobservatory.org/audio_recordings/1421163/media.mp3?end_offset=4650&start_offset=4620"
+      - campaign: "Bowra Station"
+        latitude: -27.981830
+        longitude: 145.611615
+        location: "Cunnamulla, Queensland"
+        image: "/bowra.jpg"
+        audio: "https://api.acousticobservatory.org/audio_recordings/1540597/media.mp3?end_offset=150&start_offset=120"
   colors:
-    primary: "hsl(30deg, 62%, 49%)"
-    on_primary: "#ffffff"
-    primary_container: "#1d1d1d"
-    on_primary_container: "#ffffff"
+    primary: "#de9843"
+    on_primary: "#000000"
+    primary_container: "#f7f4e5"
+    on_primary_container: "#163525"
 
-    secondary: "hsl(30deg, 62%, 49%)"
-    on_secondary: "#ffffff"
-    secondary_container: "hsl(30deg, 62%, 49%)"
-    on_secondary_container: "#ffffff"
+    secondary: "#de9843"
+    on_secondary: "#000000"
+    secondary_container: "#de9843"
+    on_secondary_container: "#000000"
 
-    surface: "#1d1d1d"
-    on_surface: "#ffffff"
+    surface: "#d3d4b5"
+    on_surface: "#163525"
 
-    surface_container_high: "#1a1a1a"
-    surface_container: "#2a2a2a"
-    surface_container_low: "#3a3a3a"
+    surface_container_lowest: "#fffef6"
+    surface_container_high: "#f7f4e5"
+    surface_container: "#f8f2eb"
+    surface_container_low: "#e3ded9"
 
-    surface_variant: "#fffff"
-    on_surface_variant: "#1a1a1a"
+    surface_variant: "#f7f4e5"
+    on_surface_variant: "#444746"
 
-    outline: "#6f7978"
+    outline: "#c7883c"
+    overlay: "rgb(23 29 26 / 74%)"
     error: "#b00020"
   showcase:
     - title: "Can you hear an Australasian Bittern"
       description: "The Eavesdropping on Wetland Birds project has been using Call Detective to validate australian bittern calls across a network of remote recording devices."
-      image: "/eavesdropping_homepage.jpg"
+      image: "/bittern.jpg"
       link: "https://bittern.calldetective.org/"
       eventCountFilter: ""
       verifiedCountFilter: ""
     - title: "Where are the Gang-gangs?"
       description: "Help Museums Victoria find and identify gang-gang cockatoos in their recordings."
-      image: "/gang_gang_homepage.jpg"
+      image: "/gang_gang.jpg"
       link: "https://gang-gangs.calldetective.org"
       eventCountFilter: ""
       verifiedCountFilter: ""
     - title: "Tassie Calling"
       description: "Protect Tasmania is working to build a stronger future for threatened species conservation by advancing the use of bioacoustic detection and monitoring across Tasmania."
-      image: "/tassie_calling_homepage.jpg"
+      image: "/tassie_calling.jpg"
       link: "https://tassie-calling.calldetective.org/"
       eventCountFilter: ""
       verifiedCountFilter: ""

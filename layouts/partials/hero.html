@@ -1,0 +1,59 @@
+<div class="hero-container {{ .class }}">
+  <figure class="hero-image">
+    <img
+      srcset="
+        /hero-image-1280w.webp 1280w,
+        /hero-image-1920w.webp 1920w,
+        /hero-image-2560w.webp 2560w,
+        /hero-image-3840w.webp 3840w
+      "
+      src="/hero-image-1920w.webp"
+      sizes="100vw"
+      alt="Landscape photograph of the Australian outback plains with a lone tree in the foreground and mountains in the distance"
+      loading="eager"
+    />
+    {{- with .citation }}
+    <figcaption class="hero-citation">
+      <cite>{{ . }}</cite>
+    </figcaption>
+    {{- end }}
+  </figure>
+
+  <div class="hero-overlay">
+    <h1 class="hero-title md-typescale-display-large">{{ .title | safeHTML }}</h1>
+    <p class="hero-tagline md-typescale-body-large">{{ .tagline }}</p>
+
+    {{- if .showActions }}
+    <div class="hero-actions">
+      <md-outlined-button href="#map">Explore Map</md-outlined-button>
+      <md-filled-tonal-button href="#projects">Verify Calls</md-filled-tonal-button>
+    </div>
+
+    {{ $events := site.Params.stats.events }}
+    {{ $verifications := site.Params.stats.verifications }}
+    {{ $projects := len (default (slice) site.Params.showcase) }}
+    <dl class="hero-stats">
+      <div class="hero-stat">
+        <dt class="md-typescale-title-medium">Events</dt>
+        <dd class="accent">
+          <layflags-rolling-number>{{ $events }}</layflags-rolling-number>
+        </dd>
+      </div>
+      <div class="hero-stat">
+        <dt class="md-typescale-title-medium">Verifications</dt>
+        <dd class="accent">
+          <layflags-rolling-number>{{ $verifications }}</layflags-rolling-number>
+        </dd>
+      </div>
+      <div class="hero-stat">
+        <dt class="md-typescale-title-medium">Projects</dt>
+        <dd class="accent">
+          <layflags-rolling-number>{{ $projects }}</layflags-rolling-number>
+        </dd>
+      </div>
+    </dl>
+    {{- end }}
+
+    {{- with .extras }}{{ . | safeHTML }}{{ end }}
+  </div>
+</div>

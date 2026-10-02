@@ -1,26 +1,22 @@
 <!-- Hero Section -->
-{{< fullbleed >}}
-  {{% section-hero %}}
-Citizen science verification platforms for Ecoacoustics.
-  {{% /section-hero %}}
-{{< /fullbleed >}}
+{{% fullbleed %}}
+{{< section-hero >}}
+Citizen science verification platforms for Ecoacoustics, empowering communities to identify wildlife calls.
+{{< /section-hero >}}
+{{% /fullbleed %}}
 
-{{< section class="dark-section" >}}
-  {{< section-hero-blurb />}}
-{{< /section >}}
+{{% section class="how-it-works-section" %}}
+{{% section-how-it-works /%}}
+{{% /section %}}
 
-<div></div>
+{{% section %}}
+{{< section-map >}}
+  {{< map id="map" on-callout-shown="loadSiteCallout" on-callout-hidden="pauseSiteCallout" >}}
+{{< /section-map >}}
+{{% /section %}}
 
-{{< section class="showcase-section" >}}
-  {{< section-showcase />}}
-{{< /section >}}
+{{% section %}}
+{{% section-showcase /%}}
+{{% /section %}}
 
-<div></div>
-
-{{< section class="dark-section" >}}
-  {{< section-description />}}
-{{< /section >}}
-
-<div></div>
-
-{{< sponsors />}}
+{{% sponsors class="fullbleed site-footer" /%}}

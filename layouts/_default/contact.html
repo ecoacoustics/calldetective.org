@@ -1,25 +1,11 @@
 {{ define "main" }}
   <main id="contact-page" class="page contact-page">
-    <section class="contact-hero fullbleed">
-      <figure>
-        <img
-          srcset="
-            /hero-image-1280w.webp 1280w,
-            /hero-image-1920w.webp 1920w,
-            /hero-image-2560w.webp 2560w,
-            /hero-image-3840w.webp 3840w
-          "
-          src="/hero-image-1920w.webp"
-          sizes="100vw"
-          alt="Landscape photograph of the Australian outback plains with a lone tree in the foreground and mountains in the distance"
-        />
-      </figure>
-      <a class="contact-home" href="/">← Call Detective</a>
-      <div class="contact-hero-overlay">
-        <h1>Contact us</h1>
-        <p>Let’s talk about your ecoacoustics project.</p>
-      </div>
-    </section>
+    {{ partial "hero.html" (dict
+      "class" "fullbleed"
+      "title" `Contact us`
+      "tagline" "Let’s talk about your ecoacoustics project."
+      "extras" `<a class="contact-home" href="/">← Call Detective</a>`
+    ) }}
 
     <section class="contact-content fullbleed">
       <div class="contact-layout">

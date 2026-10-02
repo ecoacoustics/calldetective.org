@@ -1,0 +1,28 @@
+{{ $projectCount := len (default (slice) .Site.Params.showcase) }}
+<div class="how-it-works">
+  <h2 class="section-heading md-typescale-display-small">
+    How it <em class="accent">Works</em>
+  </h2>
+  <p class="section-lead md-typescale-body-large">
+    Choose from one of our {{ $projectCount }} projects to contribute to
+    or get inspired by taking a tour around Australia. Your verification 
+    of AI detected calls will directly benefit ecoacoustics research across Australia.
+  </p>
+
+  <ol class="steps">
+    <li class="md-typescale-title-medium">
+      <md-icon aria-hidden="true">counter_1</md-icon>
+      Select a Project
+    </li>
+    <li class="md-typescale-title-medium">
+      <md-icon aria-hidden="true">counter_2</md-icon>
+      Register/Login
+    </li>
+    <li class="md-typescale-title-medium">
+      <md-icon aria-hidden="true">counter_3</md-icon>
+      Verify Calls
+    </li>
+  </ol>
+
+  {{- .Inner -}}
+</div>

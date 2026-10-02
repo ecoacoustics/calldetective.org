@@ -1,0 +1,49 @@
+{{- $site := .site -}}
+{{- $spectrogramID := printf "site-spectrogram-%s" ($site.campaign | urlize) -}}
+<div class="map-callout-content site-callout">
+  {{- with $site.image }}
+    {{- with resources.Get . }}
+      {{- $image := .Fill "370x254 webp q75" }}
+  <img class="site-callout-image" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="" loading="lazy" />
+    {{- else }}
+  <img class="site-callout-image" src="{{ . }}" alt="" loading="lazy" />
+    {{- end }}
+  {{- end }}
+
+  <h3 class="site-callout-title md-typescale-title-medium">
+    {{- with $site.page }}<a href="{{ . }}">{{ $site.campaign }}</a>{{ else }}{{ $site.campaign }}{{ end -}}
+  </h3>
+
+  {{- with $site.location }}
+  <p class="site-callout-location md-typescale-label-small">
+    <md-icon aria-hidden="true">location_on</md-icon>
+    {{ . }}
+  </p>
+  {{- end }}
+
+  {{- with $site.audio }}
+  <oe-spectrogram
+    id="{{ $spectrogramID }}"
+    class="site-callout-spectrogram"
+    data-src="{{ . }}"
+    scaling="stretch"
+    color-map="grayscale"
+    window-size="512"
+    window-function="hamming"
+  ></oe-spectrogram>
+
+  <div class="site-callout-player md-typescale-title-small">
+    <oe-media-controls for="{{ $spectrogramID }}">
+      <span slot="play-icon" class="site-callout-action">
+        <img src="/icons/play-button.svg" alt="" width="24" height="24" />
+        Play
+      </span>
+      <span slot="pause-icon" class="site-callout-action">
+        <img src="/icons/pause-button.svg" alt="" width="24" height="24" />
+        Pause
+      </span>
+    </oe-media-controls>
+    <span class="site-callout-duration"></span>
+  </div>
+  {{- end }}
+</div>
