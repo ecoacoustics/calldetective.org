@@ -11,6 +11,47 @@
   text-align: center;
 }
 
+/* section-giving-nature shortcode */
+.giving-nature-section {
+  background-color: var(--md-sys-color-surface-container-high);
+
+  .giving-nature {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: center;
+    gap: var(--micro-padding-xlarge);
+    max-width: 72rem;
+    margin-inline: auto;
+
+    @media (max-width: 48em) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .giving-nature-heading {
+    margin: 0;
+    text-align: left;
+  }
+
+  .giving-nature-copy p {
+    margin: var(--micro-padding-medium) 0 0;
+  }
+
+  .giving-nature-video {
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    background-color: var(--md-sys-color-surface-container-lowest);
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
+}
+
 /* section-how-it-works shortcode */
 .how-it-works-section {
   background-color: var(--md-sys-color-surface-container-high);
