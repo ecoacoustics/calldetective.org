@@ -23,5 +23,15 @@ globalThis.loadSiteCallout = (callout) => {
 };
 
 globalThis.pauseSiteCallout = (callout) => {
-  callout.querySelector("oe-spectrogram")?.pause();
+  let spectrogram = callout.querySelector("oe-spectrogram");
+  
+  if (!spectrogram) {
+    return;
+  }
+
+  if (spectrogram.paused) {
+    return;
+  }
+
+  spectrogram.pause();
 };
