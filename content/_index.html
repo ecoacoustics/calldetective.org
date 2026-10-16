@@ -27,14 +27,88 @@ Citizen science verification platforms for Ecoacoustics, empowering communities 
         </p>
       </div>
       <div class="giving-nature-video">
-        <iframe
-          src="https://www.youtube.com/embed/hxk1zpLiGn4"
-          title="Giving Nature a Voice"
-          loading="lazy"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+        <!--
+          The site's COEP header (needed for SharedArrayBuffer) blocks YouTube
+          frames unless the iframe is credentialless, which only Chromium
+          supports. Other browsers keep the thumbnail link below.
+        -->
+        <style>
+          .giving-nature-video-link {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              /* YouTube thumbnails are 4:3 with letterboxing; crop to 16:9. */
+              object-fit: cover;
+            }
+
+            &:focus-visible {
+              outline: 3px solid var(--md-sys-color-primary);
+              outline-offset: -3px;
+            }
+          }
+
+          .giving-nature-video-play {
+            position: absolute;
+            inset: 50% auto auto 50%;
+            width: 68px;
+            height: 48px;
+            border-radius: 12px;
+            background-color: rgb(33 33 33 / 80%);
+            transform: translate(-50%, -50%);
+            transition: background-color 0.15s;
+
+            &::after {
+              content: "";
+              position: absolute;
+              inset: 50% auto auto 54%;
+              border-block: 10px solid transparent;
+              border-inline-start: 17px solid #fff;
+              transform: translate(-50%, -50%);
+            }
+          }
+
+          .giving-nature-video-link:is(:hover, :focus-visible) .giving-nature-video-play {
+            background-color: #f00;
+          }
+        </style>
+        <a
+          class="giving-nature-video-link"
+          href="https://www.youtube.com/watch?v=hxk1zpLiGn4"
+          target="_blank"
+          rel="noopener"
+        >
+          <img
+            src="https://i.ytimg.com/vi/hxk1zpLiGn4/sddefault.jpg"
+            alt="Watch Giving Nature a Voice on YouTube"
+            loading="lazy"
+          />
+          <span class="giving-nature-video-play" aria-hidden="true"></span>
+        </a>
+        <template>
+          <iframe
+            src="https://www.youtube.com/embed/hxk1zpLiGn4"
+            title="Giving Nature a Voice"
+            loading="lazy"
+            credentialless
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </template>
+        <script>
+          (() => {
+            if (!("credentialless" in HTMLIFrameElement.prototype)) return;
+            const container = document.currentScript.parentElement;
+            const template = container.querySelector("template");
+            container.replaceChildren(template.content.cloneNode(true));
+          })();
+        </script>
       </div>
     </div>
   </div>
