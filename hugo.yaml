@@ -10,6 +10,8 @@ server:
         Cross-Origin-Opener-Policy: same-origin
         Cross-Origin-Embedder-Policy: require-corp
         Cross-Origin-Resource-Policy: cross-origin
+        # CSP for local development - must be kept in sync with netlify.toml
+        Content-Security-Policy-Report-Only: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.jsdelivr.net https://maps.googleapis.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://maps.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.googleapis.com https://*.gstatic.com https://*.googleusercontent.com; connect-src 'self' data: https://*.ecosounds.org https://*.acousticobservatory.org https://cdn.jsdelivr.net https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com; media-src 'self' https://*.ecosounds.org https://*.acousticobservatory.org; frame-src 'none'; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';"
         ignoreLogs:
           - warning-goldmark-raw-html
 module:
@@ -45,19 +47,72 @@ params:
         longitude: 145.452491
         location: "Cape Tribulation, Queensland"
         image: "/daintree.jpg"
-        audio: "https://api.acousticobservatory.org/audio_recordings/492563/media.mp3?end_offset=5880&start_offset=5850"
+        page: "https://a2o.calldetective.org/daintree/?ref=calldetective"
+        audio: "https://api.acousticobservatory.org/audio_recordings/492563/media.mp3?end_offset=5870&start_offset=5850"
       - campaign: "Mount Barney"
         latitude: -28.234639
         longitude: 152.641407
         location: "Scenic Rim, Queensland"
         image: "/mtbarney.jpg"
-        audio: "https://api.acousticobservatory.org/audio_recordings/1421163/media.mp3?end_offset=4650&start_offset=4620"
+        page: "https://a2o.calldetective.org/mtbarney/?ref=calldetective"
+        audio: "https://api.acousticobservatory.org/audio_recordings/1421163/media.mp3?end_offset=4640&start_offset=4620"
       - campaign: "Bowra Station"
         latitude: -27.981830
         longitude: 145.611615
         location: "Cunnamulla, Queensland"
         image: "/bowra.jpg"
-        audio: "https://api.acousticobservatory.org/audio_recordings/1540597/media.mp3?end_offset=150&start_offset=120"
+        page: "https://a2o.calldetective.org/bowra/?ref=calldetective"
+        audio: "https://api.acousticobservatory.org/audio_recordings/1540597/media.mp3?end_offset=140&start_offset=120"
+      - campaign: "Monjebup Reserve"
+        latitude: -34.243607
+        longitude: 118.560849
+        location: "South-western Australia"
+        image: "/monjebup.jpg"
+        page: "https://a2o.calldetective.org/monjebup/?ref=calldetective"
+        audio: "https://api.acousticobservatory.org/audio_recordings/156490/media.mp3?end_offset=50&start_offset=40"
+      - campaign: "Marshmead"
+        latitude: -37.486020
+        longitude: 149.831509
+        location: "East Gippsland, Victoria"
+        image: "/marshmead.jpg"
+        page: "https://a2o.calldetective.org/marshmead/?ref=calldetective"
+        audio: "https://api.acousticobservatory.org/audio_recordings/1208936/media.mp3?end_offset=6985&start_offset=6965"
+
+      - campaign: "Binya"
+        latitude: -34.219819
+        longitude: 146.267081
+        location: "Riverina, New South Wales"
+        image: "/binya.jpg"
+        page: "https://a2o.calldetective.org/binya/?ref=calldetective"
+        audio: "https://api.acousticobservatory.org/audio_recordings/1452067/media.mp3?end_offset=745&start_offset=725"
+      - campaign: "Can you hear an Australasian Bittern"
+        # Placeholder coordinates; replace with the project's actual location.
+        latitude: -30.0
+        longitude: 145.0
+        location: "Can you hear an Australasian Bittern"
+        image: "/bittern.jpg"
+        page: "https://bittern.calldetective.org/?ref=calldetective"
+      - campaign: "Where are the Gang-gangs?"
+        # Placeholder coordinates; replace with the project's actual location.
+        latitude: -37.814
+        longitude: 144.963
+        location: "Where are the Gang-gangs?"
+        image: "/gang_gang.jpg"
+        page: "https://gang-gangs.calldetective.org?ref=calldetective"
+      - campaign: "Tassie Calling"
+        # Placeholder coordinates; replace with the project's actual location.
+        latitude: -42.882
+        longitude: 147.327
+        location: "Tassie Calling"
+        image: "/tassie_calling.jpg"
+        page: "https://tassie-calling.calldetective.org/?ref=calldetective"
+      - campaign: "Whoo's Calling"
+        # Placeholder coordinates; replace with the project's actual location.
+        latitude: -33.869
+        longitude: 151.209
+        location: "Whoo's Calling"
+        image: "/whoos_calling.jpg"
+        page: "https://powerful-owl.calldetective.org/?ref=calldetective"
   colors:
     primary: "#de9843"
     on_primary: "#000000"
@@ -84,30 +139,37 @@ params:
     overlay: "rgb(23 29 26 / 74%)"
     error: "#b00020"
   showcase:
+    - title: "A2O Tour of Australia"
+      image: "/a2o_tour.jpg"
+      description: "The A2O Tour of Australia project uses Call Detective to validate bird calls across the continent."
+      link: "https://a2o.calldetective.org/?ref=calldetective"
+      eventCountFilter: ""
+      verifiedCountFilter: ""
     - title: "Can you hear an Australasian Bittern"
       description: "The Eavesdropping on Wetland Birds project has been using Call Detective to validate australian bittern calls across a network of remote recording devices."
       image: "/bittern.jpg"
-      link: "https://bittern.calldetective.org/"
+      link: "https://bittern.calldetective.org/?ref=calldetective"
       eventCountFilter: ""
       verifiedCountFilter: ""
     - title: "Where are the Gang-gangs?"
       description: "Help Museums Victoria find and identify gang-gang cockatoos in their recordings."
       image: "/gang_gang.jpg"
-      link: "https://gang-gangs.calldetective.org"
+      link: "https://gang-gangs.calldetective.org?ref=calldetective"
       eventCountFilter: ""
       verifiedCountFilter: ""
     - title: "Tassie Calling"
       description: "Protect Tasmania is working to build a stronger future for threatened species conservation by advancing the use of bioacoustic detection and monitoring across Tasmania."
       image: "/tassie_calling.jpg"
-      link: "https://tassie-calling.calldetective.org/"
+      link: "https://tassie-calling.calldetective.org/?ref=calldetective"
       eventCountFilter: ""
       verifiedCountFilter: ""
     - title: "Whoo's Calling"
       image: "/whoos_calling.jpg"
       description: "Birdlife Australia is using a Call Detective project to validate powerful owl calls created by AI workflows."
-      link: "https://powerful-owl.calldetective.org/"
+      link: "https://powerful-owl.calldetective.org/?ref=calldetective"
       eventCountFilter: ""
       verifiedCountFilter: ""
+
   sponsors:
     logos:
       - image: "images/google-logo.webp"
