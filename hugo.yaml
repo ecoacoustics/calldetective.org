@@ -46,28 +46,28 @@ params:
         location: "Cape Tribulation, Queensland"
         image: "/daintree.jpg"
         page: "https://a2o.calldetective.org/daintree/?ref=calldetective"
-        audio: "https://api.acousticobservatory.org/audio_recordings/492563/media.mp3?end_offset=5880&start_offset=5850"
+        audio: "https://api.acousticobservatory.org/audio_recordings/492563/media.mp3?end_offset=5870&start_offset=5850"
       - campaign: "Mount Barney"
         latitude: -28.234639
         longitude: 152.641407
         location: "Scenic Rim, Queensland"
         image: "/mtbarney.jpg"
         page: "https://a2o.calldetective.org/mtbarney/?ref=calldetective"
-        audio: "https://api.acousticobservatory.org/audio_recordings/1421163/media.mp3?end_offset=4650&start_offset=4620"
+        audio: "https://api.acousticobservatory.org/audio_recordings/1421163/media.mp3?end_offset=4640&start_offset=4620"
       - campaign: "Bowra Station"
         latitude: -27.981830
         longitude: 145.611615
         location: "Cunnamulla, Queensland"
         image: "/bowra.jpg"
         page: "https://a2o.calldetective.org/bowra/?ref=calldetective"
-        audio: "https://api.acousticobservatory.org/audio_recordings/1540597/media.mp3?end_offset=150&start_offset=120"
+        audio: "https://api.acousticobservatory.org/audio_recordings/1540597/media.mp3?end_offset=140&start_offset=120"
       - campaign: "Monjebup Reserve"
         latitude: -34.243607
         longitude: 118.560849
         location: "South-western Australia"
         image: "/monjebup.jpg"
         page: "https://a2o.calldetective.org/monjebup/?ref=calldetective"
-        audio: "https://api.acousticobservatory.org/audio_recordings/156490/media.mp3?end_offset=55&start_offset=35"
+        audio: "https://api.acousticobservatory.org/audio_recordings/156490/media.mp3?end_offset=50&start_offset=40"
       - campaign: "Marshmead"
         latitude: -37.486020
         longitude: 149.831509

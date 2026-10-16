@@ -99,11 +99,11 @@
 /* section-map shortcode */
 .map-intro {
   scroll-margin-top: var(--micro-padding-large);
-  --map-callout-border-a2o: rgb(233, 185, 143);
-  --map-callout-border-bittern: rgb(183, 178, 43);
-  --map-callout-border-gang-gangs: rgb(92, 156, 131);
-  --map-callout-border-tassie: rgb(63, 120, 137);
-  --map-callout-border-whoos: rgb(204, 159, 99);
+  --map-marker-a2o: rgb(54, 157, 99);
+  --map-marker-bittern: rgb(232	227	57);
+  --map-marker-gang-gangs: rgb(213	49	57);
+  --map-marker-tassie: rgb(48, 122, 145);
+  --map-marker-whoos: rgb(248	159	39);
 
   --map-callout-background-a2o: white;
   --map-callout-background-bittern: white;
@@ -172,32 +172,57 @@
   .map-callout[aria-label="Marshmead site details"],
   .map-callout[aria-label="Binya site details"] {
     background-color: var(--map-callout-background-a2o);
-    border-color: var(--map-callout-border-a2o);
-    box-shadow: inset 0 0 20px rgb(from var(--map-callout-border-a2o) r g b / 50%);
+    border-color: rgb(from var(--map-marker-a2o) r g b / 50%);
+    box-shadow: inset 0 0 30px rgb(from var(--map-marker-a2o) r g b / 20%);
   }
 
   .map-callout[aria-label="Can you hear an Australasian Bittern site details"] {
     background-color: var(--map-callout-background-bittern);
-    border-color: var(--map-callout-border-bittern);
-    box-shadow: inset 0 0 20px rgb(from var(--map-callout-border-bittern) r g b / 50%);
+    border-color: rgb(from var(--map-marker-bittern) r g b / 50%);
+    box-shadow: inset 0 0 30px rgb(from var(--map-marker-bittern) r g b / 20%);
   }
 
   .map-callout[aria-label="Where are the Gang-gangs? site details"] {
     background-color: var(--map-callout-background-gang-gangs);
-    border-color: var(--map-callout-border-gang-gangs);
-    box-shadow: inset 0 0 20px rgb(from var(--map-callout-border-gang-gangs) r g b / 50%);
+    border-color: rgb(from var(--map-marker-gang-gangs) r g b / 50%);
+    box-shadow: inset 0 0 30px rgb(from var(--map-marker-gang-gangs) r g b / 20%);
   }
 
   .map-callout[aria-label="Tassie Calling site details"] {
     background-color: var(--map-callout-background-tassie);
-    border-color: var(--map-callout-border-tassie);
-    box-shadow: inset 0 0 20px rgb(from var(--map-callout-border-tassie) r g b / 50%);
+    border-color: rgb(from var(--map-marker-tassie) r g b / 50%);
+    box-shadow: inset 0 0 30px rgb(from var(--map-marker-tassie) r g b / 20%);
   }
 
   .map-callout[aria-label="Whoo's Calling site details"] {
     background-color: var(--map-callout-background-whoos);
-    border-color: var(--map-callout-border-whoos);
-    box-shadow: inset 0 0 20px rgb(from var(--map-callout-border-whoos) r g b / 50%);
+    border-color: rgb(from var(--map-marker-whoos) r g b / 50%);
+    box-shadow: inset 0 0 30px rgb(from var(--map-marker-whoos) r g b / 20%);
+  }
+
+  .map-marker-button[aria-label="Daintree Rainforest Observatory"] .map-marker-dot,
+  .map-marker-button[aria-label="Mount Barney"] .map-marker-dot,
+  .map-marker-button[aria-label="Bowra Station"] .map-marker-dot,
+  .map-marker-button[aria-label="Monjebup Reserve"] .map-marker-dot,
+  .map-marker-button[aria-label="Marshmead"] .map-marker-dot,
+  .map-marker-button[aria-label="Binya"] .map-marker-dot {
+    background-color: var(--map-marker-a2o);
+  }
+
+  .map-marker-button[aria-label="Can you hear an Australasian Bittern"] .map-marker-dot {
+    background-color: var(--map-marker-bittern);
+  }
+
+  .map-marker-button[aria-label="Where are the Gang-gangs?"] .map-marker-dot {
+    background-color: var(--map-marker-gang-gangs);
+  }
+
+  .map-marker-button[aria-label="Tassie Calling"] .map-marker-dot {
+    background-color: var(--map-marker-tassie);
+  }
+
+  .map-marker-button[aria-label="Whoo's Calling"] .map-marker-dot {
+    background-color: var(--map-marker-whoos);
   }
 
   .map-callout-close {
@@ -243,7 +268,7 @@
   }
 
   .site-callout-spectrogram {
-    --min-height: 1.5rem;
+    --min-height: 4.5rem;
 
     display: block;
     width: 100%;
@@ -276,6 +301,11 @@
     align-items: center;
     gap: var(--micro-padding-small);
     color: var(--micro-font-color);
+    cursor: pointer;
+
+    img {
+      cursor: pointer;
+    }
   }
 
 }
