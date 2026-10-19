@@ -12,6 +12,7 @@
       (resources.Get "css/home.css")
       (resources.Get "css/contact.css")
       (resources.Get "css/map.css")
+      (resources.Get "css/footer.css")
     }}
 
     {{- with $cssFiles | resources.Concat "css/bundle.css" }}
@@ -58,6 +59,14 @@
   </head>
 
   <body{{ with .Layout }} class="layout-{{ . }}"{{ end }}>
+  
     {{ block "main" . }}{{ end }}
+
+  <footer>
+    {{ partial "footer/footer-before.html" . }}
+    {{ partial "footer/footer-acknowledgement.html" . }}
+    {{ partial "footer/footer-after.html" . }}
+  </footer>
+     
   </body>
 </html>
