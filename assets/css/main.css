@@ -200,3 +200,17 @@ section.page-section {
 .fullbleed {
   grid-column: fullbleed !important;
 }
+
+body > footer {
+  grid-column: fullbleed;
+
+  .footer-acknowledgement {
+    font-size: 0.8rem;
+    margin: 1.5rem 3rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+
+
+}
