@@ -56,7 +56,7 @@ params:
         longitude: 152.641407
         location: "Scenic Rim, Queensland"
         image: "/mtbarney.jpg"
-        page: "https://a2o.calldetective.org/mtbarney/?ref=calldetective"
+        page: "https://a2o.calldetective.org/mount-barney/?ref=calldetective"
         audio: "https://api.acousticobservatory.org/audio_recordings/1421163/media.mp3?end_offset=4640&start_offset=4620"
       - campaign: "Bowra Station"
         subtitle: "Ecoacoustic Tour of Australia"
