@@ -111,6 +111,11 @@
   --map-callout-background-tassie: white;
   --map-callout-background-whoos: white;
 
+  a {
+    color: var(--md-sys-color-on-surface);
+    text-decoration: underline;
+  }
+
   .map-frame {
     max-width: 60rem;
     margin: var(--micro-padding-large) auto 0;
@@ -242,6 +247,19 @@
   .site-callout-title {
     margin-top: var(--micro-padding-small);
     font-weight: 700;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .site-callout-subtitle {
+    margin-top: 0.4rem;
+    font-weight: 400;
+    font-size: var(--micro-font-size-xsmall);
+    /* color: var(--md-sys-color-secondary-container); */
+    opacity: 0.9;
+    font-style: italic;
 
     a {
       color: inherit;

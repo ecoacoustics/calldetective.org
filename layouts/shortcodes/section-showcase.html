@@ -14,7 +14,7 @@
         <img src="{{ .image }}" alt="" loading="lazy" />
       </a>
       <h3 class="md-typescale-title-medium">{{ .title }}</h3>
-      <p class="md-typescale-label-large">{{ .description }}</p>
+      <p class="md-typescale-label-large">{{ .description | safeHTML }}</p>
       <md-filled-tonal-button class="project-card-action" href="{{ .link }}">
         View Project
       </md-filled-tonal-button>
