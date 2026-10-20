@@ -92,6 +92,13 @@
   --micro-border-radius: 0.25rem;
 }
 
+ /* Smooth scrolling for users who have not requested reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
