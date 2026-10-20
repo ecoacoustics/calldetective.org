@@ -14,6 +14,10 @@
     {{- with $site.page }}<a href="{{ . }}">{{ $site.campaign }}</a>{{ else }}{{ $site.campaign }}{{ end -}}
   </h3>
 
+  {{- with $site.subtitle }}
+  <p class="site-callout-subtitle md-typescale-label-medium">from the {{ . }}</p>
+  {{- end }}
+
   {{- with $site.location }}
   <p class="site-callout-location md-typescale-label-small">
     <md-icon aria-hidden="true">location_on</md-icon>
